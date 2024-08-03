@@ -1,0 +1,10 @@
+{
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay"
+}
