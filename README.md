@@ -15,7 +15,7 @@ After that, go to the [Next AI Template](https://github.com/alexfdez1010/next-te
 You can also execute the following command in your terminal:
 
 ```sh
-npx create-next-app@latest --example alexfdez1010/next-template
+npx create-next-app@latest --example https://github.com/alexfdez1010/next-template
 ```
 
 This will create a new Next.js project based on the Next AI Template directly. After that, you should clone the repository on your local machine. To install all the dependencies, run the following command in your terminal:

@@ -50,7 +50,7 @@ export default function Page() {
       <p className="text-pretty">
         You can also execute the following command in your terminal:
       </p>
-      <Snippet color="primary" variant="bordered">
+      <Snippet color="primary" variant="bordered" codeString='npx create-next-app@latest --example https://github.com/alexfdez1010/next-template'>
         npx create-next-app@latest --example alexfdez1010/next-template
       </Snippet>
       <p className="text-pretty">
