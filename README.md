@@ -55,7 +55,7 @@ See [AGENTS.md](./AGENTS.md) for complete development guidelines and principles 
 ## 📋 Prerequisites
 
 - **Node.js** 20.x or higher
-- **npm** 10.x or higher
+- **Bun** 1.x or higher ([install](https://bun.sh/))
 - **Docker** and **Docker Compose** (for database)
 - **Git** for version control
 
@@ -69,7 +69,7 @@ git clone https://github.com/alexfdez1010/next-template.git my-project
 cd my-project
 
 # Install dependencies
-npm install
+bun install
 ```
 
 ### 2. Environment Setup
@@ -86,20 +86,20 @@ cp .env.example .env
 
 ```bash
 # Start PostgreSQL container
-npm run database
+bun run database
 
 # Run migrations (in another terminal)
-npm run database:dev
+bun run database:dev
 
 # Stop database when done
-npm run database:down
+bun run database:down
 ```
 
 ### 4. Run Development Server
 
 ```bash
 # Start development server with Turbopack
-npm run dev
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see your application.
@@ -108,34 +108,34 @@ Open [http://localhost:3000](http://localhost:3000) to see your application.
 
 ### Development
 
-- **`npm run dev`** - Start development server with database
-- **`npm run build`** - Build production bundle
-- **`npm run start`** - Start production server
-- **`npm run launch`** - Build and start with database
+- **`bun run dev`** - Start development server with database
+- **`bun run build`** - Build production bundle
+- **`bun run start`** - Start production server
+- **`bun run launch`** - Build and start with database
 
 ### Code Quality
 
-- **`npm run lint`** - Run ESLint and Prisma formatting
-- **`npm run format`** - Format code with Prettier
-- **`npm run lint-format`** - Lint and format (required before commits)
-- **`npm run pre-commit`** - Run tests and code quality checks
+- **`bun run lint`** - Run ESLint and Prisma formatting
+- **`bun run format`** - Format code with Prettier
+- **`bun run lint-format`** - Lint and format (required before commits)
+- **`bun run pre-commit`** - Run tests and code quality checks
 
 ### Testing
 
-- **`npm test`** - Run all tests (unit, integration, E2E)
-- **`npm run test:unit`** - Run unit tests only
-- **`npm run test:integration`** - Run integration tests only
-- **`npm run test:e2e`** - Run E2E tests with Playwright
-- **`npm run playwright`** - Open Playwright UI for debugging
+- **`bun run test`** - Run all tests (unit, integration, E2E)
+- **`bun run test:unit`** - Run unit tests only
+- **`bun run test:integration`** - Run integration tests only
+- **`bun run test:e2e`** - Run E2E tests with Playwright
+- **`bun run playwright`** - Open Playwright UI for debugging
 
 ### Database
 
-- **`npm run database`** - Start PostgreSQL container
-- **`npm run database:down`** - Stop database container
-- **`npm run database:dev`** - Run migrations in development
-- **`npm run database:deploy`** - Deploy migrations to production
-- **`npm run database:studio`** - Open Prisma Studio
-- **`npm run database:test`** - Start test database
+- **`bun run database`** - Start PostgreSQL container
+- **`bun run database:down`** - Stop database container
+- **`bun run database:dev`** - Run migrations in development
+- **`bun run database:deploy`** - Deploy migrations to production
+- **`bun run database:studio`** - Open Prisma Studio
+- **`bun run database:test`** - Start test database
 
 ## 🏗️ Project Structure
 
@@ -175,7 +175,7 @@ next-template/
 Located in `tests/unit/`, these test individual functions and components in isolation.
 
 ```bash
-npm run test:unit
+bun run test:unit
 ```
 
 ### Integration Tests
@@ -183,7 +183,7 @@ npm run test:unit
 Located in `tests/integration/`, these test module interactions and API endpoints.
 
 ```bash
-npm run test:integration
+bun run test:integration
 ```
 
 ### End-to-End Tests
@@ -191,7 +191,7 @@ npm run test:integration
 Located in `tests/e2e/`, these test complete user flows across browsers.
 
 ```bash
-npm run test:e2e
+bun run test:e2e
 ```
 
 ## 🗄️ Database Management
@@ -200,23 +200,23 @@ npm run test:e2e
 
 ```bash
 # Create a new migration
-npm run database:dev
+bun run database:dev
 
 # Deploy migrations to production
-npm run database:deploy
+bun run database:deploy
 
 # Check migration status
-npm run database:check
+bun run database:check
 
 # Open Prisma Studio
-npm run database:studio
+bun run database:studio
 ```
 
 ### Schema Changes
 
 1. Edit `prisma/schema.prisma`
-2. Run `npm run database:dev` to create migration
-3. Test with `npm run database:test`
+2. Run `bun run database:dev` to create migration
+3. Test with `bun run database:test`
 4. Commit schema and migration files
 
 ## 🚢 Deployment
@@ -233,10 +233,10 @@ DATABASE_URL="postgresql://user:password@host:5432/database"
 
 ```bash
 # Build production bundle
-npm run build
+bun run build
 
 # Run production server
-npm run start
+bun run start
 ```
 
 ## 🔧 Configuration Files
