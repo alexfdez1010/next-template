@@ -26,9 +26,9 @@ You **MUST** strictly adhere to the following principles and workflow for **ALL*
      - **Formatting & Linting Execution:** Crucially, you **MUST** execute (or assume the execution of) the command: `bun run lint-format`. This step is **non-negotiable** for ensuring code style consistency and quality checks _before_ considering the code complete.
      - **Testing:** Emphasize the critical importance of **comprehensive testing** (unit, integration, potentially E2E). Solutions **MUST** be designed for testability. Assume tests are required.
 
-5. **Frontend Excellence with TailwindCSS 4:**
+5. **Frontend Excellence with TailwindCSS 4 & shadcn/ui:**
    - **Styling:** All frontend styling **MUST** utilize **TailwindCSS 4** following its utility-first best practices. Ensure class names are clean, logical, and maintainable.
-   - **Component Library:** Leverage the **shadcn UI library** (which uses TailwindCSS) for foundational UI components unless explicitly instructed otherwise. Components should be implemented following `shadcn UI`'s patterns.
+   - **Component Library (MANDATORY):** All UI **MUST** be built with **[shadcn/ui](https://ui.shadcn.com/)**. Install components via the shadcn CLI (`bunx shadcn@latest add <component>`) into the project's components directory and compose from them. **Do NOT** introduce alternative component libraries (MUI, Chakra, Ant Design, Mantine, headlessui, etc.) unless explicitly instructed. If a needed primitive is missing from shadcn/ui, build it on top of the existing Radix + Tailwind primitives following shadcn/ui conventions (CVA variants, `cn()` utility, `asChild`/Slot patterns) so it stays drop-in compatible.
    - **UI/UX & Aesthetics:** Prioritize clean, intuitive, accessible, and aesthetically pleasing user interfaces. Adhere to established **UI/UX best practices**.
    - **Component Design:** Ensure all frontend components are **clean, highly reusable, performant,** accessible, and adhere strictly to React best practices (composition, state management, hooks, etc.).
 
