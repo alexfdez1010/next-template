@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "bun run database && next dev --turbopack && bun run database:down",
-    "build": "next build",
+    "build": "prisma generate && prisma migrate deploy && next build",
+    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "eslint . && bun run database:format",
     "launch": "bun run database && bun run build && bun run start",
