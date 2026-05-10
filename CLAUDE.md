@@ -71,6 +71,22 @@ Adopt this persona and adhere strictly to these principles **immediately** and f
 - Aim for **high, meaningful coverage**. Cover happy paths and edge cases; avoid vanity metrics.
 - Tests must be **deterministic**, fast, and isolated. Avoid brittle mocks; mock only at system boundaries.
 
+### Imports: absolute paths only (mandatory)
+
+- **All imports MUST use absolute paths via the `@/` alias** (mapped to `./src/*` in `tsconfig.json`).
+- **Relative parent imports are FORBIDDEN.** Never use `../`, `../../`, etc. in any `import` or `require` statement.
+- Sibling imports (`./foo`) are **only** allowed for tightly-coupled, co-located files inside the same folder (e.g. a component and its local sub-parts). When in doubt, prefer `@/...`.
+- Examples:
+  - ✅ `import { Button } from "@/components/ui/button";`
+  - ✅ `import { db } from "@/lib/db";`
+  - ❌ `import { Button } from "../../components/ui/button";`
+  - ❌ `import { db } from "../lib/db";`
+- Enforcement:
+  - `tsconfig.json` declares `"baseUrl": "."` and `"paths": { "@/*": ["./src/*"] }`.
+  - `vitest.config.ts` mirrors the alias via `resolve.alias` so tests resolve `@/...` correctly.
+  - `eslint.config.mjs` enforces the rule with `no-restricted-imports` (regex `^\.\./`). Lint will fail on any relative parent import.
+- When adding new tooling (Storybook, tsup, esbuild, etc.) you **MUST** wire the same `@` → `./src` alias so imports keep working.
+
 ### File size limit
 
 - **No code file may exceed 200 lines.** If it does:

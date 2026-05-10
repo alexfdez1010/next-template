@@ -20,6 +20,22 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              regex: "^\\.\\.\\/",
+              message:
+                "Use absolute imports with the '@/' alias instead of relative parent imports (e.g. '@/components/foo' not '../components/foo').",
+            },
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;
