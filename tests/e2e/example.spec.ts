@@ -1,20 +1,31 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('renders the HeroUI starter page', async ({ page }) => {
+  const consoleErrors: string[] = [];
+  const pageErrors: string[] = [];
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  page.on('console', (message) => {
+    if (message.type() === 'error') consoleErrors.push(message.text());
+  });
+  page.on('pageerror', (error) => pageErrors.push(error.message));
+
+  await page.goto('/');
+
+  await expect(page).toHaveTitle(/Next\.js \+ HeroUI template/);
+  await expect(
+    page.getByRole('heading', {
+      name: 'Build the product on an intentional design system.',
+    }),
+  ).toBeVisible();
+  await expect(page.getByText('HeroUI is the UI foundation')).toBeVisible();
+  expect(consoleErrors).toEqual([]);
+  expect(pageErrors).toEqual([]);
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('exposes the official HeroUI documentation action', async ({ page }) => {
+  await page.goto('/');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  const docsButton = page.getByRole('button', { name: 'Read HeroUI docs' });
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(
-    page.getByRole('heading', { name: 'Installation' }),
-  ).toBeVisible();
+  await expect(docsButton).toBeVisible();
 });

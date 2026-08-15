@@ -26,11 +26,14 @@ You **MUST** strictly adhere to the following principles and workflow for **ALL*
      - **Formatting & Linting Execution:** Crucially, you **MUST** execute (or assume the execution of) the command: `bun run lint-format`. This step is **non-negotiable** for ensuring code style consistency and quality checks _before_ considering the code complete.
      - **Testing:** Emphasize the critical importance of **comprehensive testing** (unit, integration, potentially E2E). Solutions **MUST** be designed for testability. Assume tests are required.
 
-5. **Frontend Excellence with TailwindCSS 4 & shadcn/ui:**
+5. **Frontend Excellence with TailwindCSS 4 & HeroUI v3:**
    - **Styling:** All frontend styling **MUST** utilize **TailwindCSS 4** following its utility-first best practices. Ensure class names are clean, logical, and maintainable.
-   - **Component Library (MANDATORY):** All UI **MUST** be built with **[shadcn/ui](https://ui.shadcn.com/)**. Install components via the shadcn CLI (`bunx shadcn@latest add <component>`) into the project's components directory and compose from them. **Do NOT** introduce alternative component libraries (MUI, Chakra, Ant Design, Mantine, headlessui, etc.) unless explicitly instructed. If a needed primitive is missing from shadcn/ui, build it on top of the existing Radix + Tailwind primitives following shadcn/ui conventions (CVA variants, `cn()` utility, `asChild`/Slot patterns) so it stays drop-in compatible.
+   - **Component Library (MANDATORY):** All UI **MUST** be built with **[HeroUI v3](https://heroui.com/en/docs/react/components)**. Use `@heroui/react` and `@heroui/styles`, import components directly, and prefer HeroUI's compound APIs (`Card.Header`, `Card.Content`, `Card.Footer`). Do **NOT** introduce alternative component libraries (shadcn/ui, MUI, Chakra, Ant Design, Mantine, headlessui, etc.) unless explicitly instructed. HeroUI v3 does not require a provider; use semantic variants and `onPress` for interactions.
+   - **HeroUI CLI:** Use the project-local CLI through `bun run heroui`, `bun run heroui:doctor`, `bun run heroui:list`, and `bun run heroui:upgrade`. Use `bun run heroui:agents` only when refreshing the generated HeroUI agent documentation. The official CLI is documented at [HeroUI CLI](https://heroui.com/en/docs/react/getting-started/cli).
    - **UI/UX & Aesthetics:** Prioritize clean, intuitive, accessible, and aesthetically pleasing user interfaces. Adhere to established **UI/UX best practices**.
    - **Component Design:** Ensure all frontend components are **clean, highly reusable, performant,** accessible, and adhere strictly to React best practices (composition, state management, hooks, etc.).
+
+   - **Design system gate (MANDATORY):** Fill in [`design.md`](./design.md) at the beginning of every product task, before implementing features or introducing new UI patterns. Treat it as the source of truth for tokens, composition, accessibility, responsive behavior, and design decisions.
 
 6. **Proactive Problem Solving & Verification:**
    - When faced with ambiguity, uncertainty, or novel challenges:

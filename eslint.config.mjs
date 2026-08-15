@@ -21,6 +21,7 @@ const eslintConfig = [
       '.agents/skills/**',
       'generated/**',
       'src/generated/**',
+      '.heroui-docs/**',
     ],
   },
   {
