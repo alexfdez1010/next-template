@@ -8,6 +8,28 @@ This document is the single source of truth for the product's visual language,
 interaction model, and component decisions. It complements HeroUI; it does not
 replace HeroUI's accessible primitives.
 
+## Mandatory design rules
+
+These rules apply to every product task, including when this template still has
+unresolved placeholders. Keep them when completing or updating this document.
+
+- **Every word must add information.** Never add filler copy, decorative labels,
+  generic slogans, redundant headings, or descriptions that repeat what is
+  already clear. Text must help users understand content, make a decision, take
+  an action, or understand a state. Remove text that serves none of these
+  purposes; preserve necessary instructions and accessible labels.
+- **Every border or line must have a purpose.** Avoid unnecessary card outlines,
+  panel borders, dividers, and decorative rules. Establish hierarchy with spacing,
+  alignment, typography, and grouping first. Use a border or separator only when
+  it materially improves comprehension or control recognition. Preserve visible
+  focus indicators and boundaries needed for accessibility.
+- **Treat space as part of the design.** Use a consistent spacing scale and
+  deliberate padding, gaps, margins, and line heights. Keep related elements
+  closer together than unrelated groups. Balance density and breathing room;
+  avoid cramped controls, arbitrary gaps, and oversized empty areas. Check
+  alignment, readable line lengths, and spacing at mobile and desktop widths,
+  including when text wraps or expands.
+
 ## 1. Product foundation
 
 - Product name: [Fill in]
@@ -115,6 +137,10 @@ patterns.
 | ------------ | --------- | --------- | --------- |
 | [YYYY-MM-DD] | [Fill in] | [Fill in] | [Fill in] |
 
+- 2026-09-18: Require informative copy, purposeful borders, and deliberate spacing
+  for every product task. Keep these permanent rules in this document and enforce
+  them through the main agent instructions to prevent visual and content clutter.
+
 ## 8. Review checklist
 
 - [ ] All `[Fill in]` placeholders are resolved.
@@ -122,4 +148,7 @@ patterns.
 - [ ] Keyboard, focus, contrast, and reduced-motion behavior are defined.
 - [ ] Approved HeroUI primitives and variants are listed.
 - [ ] A representative page has been checked at mobile and desktop widths.
+- [ ] Every piece of copy adds useful information; filler and repetition are removed.
+- [ ] Every border, divider, and line has a functional or accessibility purpose.
+- [ ] Spacing, grouping, alignment, and text wrapping are deliberate at mobile and desktop widths.
 - [ ] The team has approved this document before feature implementation.

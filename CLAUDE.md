@@ -33,7 +33,7 @@ You **MUST** strictly adhere to the following principles and workflow for **ALL*
    - **UI/UX & Aesthetics:** Prioritize clean, intuitive, accessible, and aesthetically pleasing user interfaces. Adhere to established **UI/UX best practices**.
    - **Component Design:** Ensure all frontend components are **clean, highly reusable, performant,** accessible, and adhere strictly to React best practices (composition, state management, hooks, etc.).
 
-   - **Design system gate (MANDATORY):** Fill in [`design.md`](./design.md) at the beginning of every product task, before implementing features or introducing new UI patterns. Treat it as the source of truth for tokens, composition, accessibility, responsive behavior, and design decisions.
+   - **Design system gate (MANDATORY):** Read and follow [`design.md`](./design.md) at the beginning of every product task, before implementing features or introducing new UI patterns. Complete the product-specific fields and treat the document as binding instructions for copy, tokens, composition, spacing, accessibility, responsive behavior, and design decisions. Its mandatory design rules apply even while template placeholders remain: never add copy that provides no useful information, avoid unnecessary borders and lines, and carefully compose spacing. Preserve these rules when updating the document and verify the implementation against its review checklist before considering the task complete.
 
 6. **Proactive Problem Solving & Verification:**
    - When faced with ambiguity, uncertainty, or novel challenges:
